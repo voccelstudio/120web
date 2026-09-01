@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos | 1:20 Arquitectura</title>
+<meta name="description" content="Obras seleccionadas de 1:20 Arquitectura: viviendas, espacios culturales, proyectos urbanos y comerciales en Paraguay.">
+<link rel="icon" type="image/png" href="img/logo-1-20.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Inter:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+      <span class="brand-name">1:20 Arquitectura</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="proyectos.html" class="is-active">Proyectos</a>
+      <a href="estudio.html">El Estudio</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <a href="contacto.html" class="btn btn-outline header-cta">Escribinos</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="proyectos.html" class="is-active">Proyectos</a>
+  <a href="estudio.html">El Estudio</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="btn btn-primary">Escribinos</a>
+</nav>
+
+<main>
+  <!-- Introducción -->
+  <section class="section container rule">
+    <div class="grid">
+      <div class="col-8">
+        <h1 class="h-display">Obras seleccionadas</h1>
+      </div>
+      <div class="col-4" style="display:flex;align-items:flex-end">
+        <p class="body-lg text-secondary">
+          Una selección curada de intervenciones arquitectónicas que exploran la honestidad estructural,
+          la permanencia constructiva y la claridad espacial sin concesiones.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section class="section container">
+    <div class="filter-bar" id="projectFilters">
+      <button class="filter-btn label-caps is-active" data-filter="todos">Todos <span id="projectCounter">[05]</span></button>
+      <button class="filter-btn label-caps" data-filter="residencial">Residencial</button>
+      <button class="filter-btn label-caps" data-filter="comercial">Comercial</button>
+      <button class="filter-btn label-caps" data-filter="urbano">Urbano</button>
+      <button class="filter-btn label-caps" data-filter="cultural">Cultural</button>
+    </div>
+
+    <div class="grid">
+      <!-- 1 · Villa Tarragona -->
+      <article class="col-8 work-card aspect-16-9 reveal" data-project="residencial">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMVyKrKR05rfZENdU7QcKTsDPpC87OMWRHQh2WHNCaTykj7E9_daYJNCTt_vocojkLHB31dAvaald6E2fqZFya4dGCjo7g4-Gl5GWTCas5jD7fQT6rZeZ9ofwFOihOPgqflnpCHP8XxysGb0RQYil-osmBNmpwVOXP0HbUN6iJFJfGMEsWmOC3r6j9E2vwYda8Ftj4fyrfy1d5tcK03zgNVpix9m3bW6RSPz-0mVNm2zkGyx4lQZbM" alt="Proyecto residencial monolítico de hormigón" loading="lazy" data-fallback>
+        <div class="work-overlay">
+          <span class="chip">Residencial · Construida</span>
+          <h2 class="h-headline" style="font-size:clamp(28px,3vw,44px)">Villa Tarragona</h2>
+        </div>
+      </article>
+
+      <!-- 2 · Torre Nexus -->
+      <article class="col-4 work-card aspect-3-4 reveal" data-delay="100" data-project="comercial">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvbvVzEa8s9Un4h9B0Dmq4hAho2Q9_V1NoTgt7A3VMXUpseccklIXfh_GhUgy0edCiloxDcP_57S7-2Oa3tuSjUWaHlOCU2VnRdX5eThmgSKWpikQjbTYRjfb6tJaTV_7AUhrmJBYDHzO1GkUFiNRxZsikUxIO6w8kq6GieTl9tzBqW8KKp_Ts_BH-fCJgAIJlP67ZSQw75VofwbIbRD-bnq6Jm14Rjn3U8Dsh5gYjPnDuGVcfYWY8" alt="Torre comercial con fachada de acero y vidrio" loading="lazy" data-fallback>
+        <div class="work-overlay">
+          <span class="chip">Comercial · En obra</span>
+          <h2 class="h-headline-md">Torre Nexus</h2>
+        </div>
+      </article>
+
+      <!-- 3 · Plaza Cívica 04 -->
+      <article class="col-6 work-card aspect-4-3 reveal" data-project="urbano">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCNt4m-zNxjG9N6mzOQF1KOp9m-uR33sh3geybwz8XZYZwW0Zzb_g-7bBy4V5o3Lm7KLAtT3S2pwG8IbBAp7hJoE-w7g3lPyzTkLpqhwI-SUlCT4nEGsv99xbgzJZ1UmB3Fvxr9LGMyeldfwhnJEJxSPz9R29QegCNguG4TwwvvL27LSRk3XwczDTsZm0J69GuSpkjyATO-ScM7O3_Ny9u6izxbLLucZx7A2Yhj6pfpzit8la0Knbh" alt="Masterplan de plaza cívica con losas de hormigón" loading="lazy" data-fallback>
+        <div class="work-overlay">
+          <span class="chip">Urbano · Concurso</span>
+          <h2 class="h-headline-md">Plaza Cívica 04</h2>
+        </div>
+      </article>
+
+      <!-- 4 · Casa Obsidiana -->
+      <article class="col-6 work-card aspect-4-3 reveal" data-delay="100" data-project="residencial">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7YrY46t-3i46vpKcbHV_VOp3XQUOF9f3Z4EpmCfldd6t1irHqahRLqjaKfHRL85tyWu05Ask3gsbwlkqMPeb6phLEAxG2eKgmjpE0iFgt85QjYpmf0kCrqFXoDtcu652ddOo28yI5PlnvXyl0ICskYJiPzPdgwH7_5Gc2sJrUzbvsVBBPWLUMIKe6Lca8ZHrpTxTwGC-7jFEs-tK_WQP69pWL9fEfrW8mwE-HqlwPJlqebgWPW3He" alt="Interior brutalista con ventanas rasgadas y luz dramática" loading="lazy" data-fallback>
+        <div class="work-overlay">
+          <span class="chip">Residencial · Construida</span>
+          <h2 class="h-headline-md">Casa Obsidiana</h2>
+        </div>
+      </article>
+
+      <!-- 5 · Pabellón Omega -->
+      <article class="col-12 work-card aspect-21-9 reveal" data-project="cultural">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiSD0KhZYOMjqqnwkO3U_V45XI-JAcfC5638GykOwCMV-nalsz9WplN0rAvJfoKmSmV_1UHt8RE-I4s_r4o85--GSyNSiQhZUcAR8E4wxTviHHD-ewSGuTbYxgx3CVv4ik0XOm_gsNYw8WuAhunUuqz8HqezqTjmgcHR4EVG_bI6U0fvNykylr9VfiS8u0KB0YL8dsfmugQucQxgZ-QDqIoWdWQjHYosZAkFOMg5Knr66hphnxuTUg" alt="Centro cultural con gran cubierta en voladizo" loading="lazy" data-fallback>
+        <div class="work-overlay" style="padding:48px">
+          <span class="chip">Cultural · Proyecto</span>
+          <h2 class="h-display">Pabellón Omega</h2>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+        <span class="brand-name">1:20 Arquitectura</span>
+      </a>
+      <p class="caption">© <span data-year>2025</span> 1:20 Arquitectura. Asunción · Paraguay.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="label-caps">Social</h4>
+      <ul>
+        <li><a href="#" class="caption">Instagram</a></li>
+        <li><a href="#" class="caption">LinkedIn</a></li>
+        <li><a href="#" class="caption">Facebook</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="label-caps">Información</h4>
+      <ul>
+        <li><a href="#" class="caption">Bitácora</a></li>
+        <li><a href="#" class="caption">Privacidad</a></li>
+        <li><a href="contacto.html" class="caption">Trabajá con nosotros</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

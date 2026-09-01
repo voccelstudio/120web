@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | 1:20 Arquitectura</title>
+<meta name="description" content="Contactate con 1:20 Arquitectura en Asunción, Paraguay. Consultas sobre proyectos, prensa y oportunidades laborales.">
+<link rel="icon" type="image/png" href="img/logo-1-20.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Inter:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+      <span class="brand-name">1:20 Arquitectura</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="estudio.html">El Estudio</a>
+      <a href="contacto.html" class="is-active">Contacto</a>
+    </nav>
+    <a href="contacto.html" class="btn btn-outline header-cta">Escribinos</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="proyectos.html">Proyectos</a>
+  <a href="estudio.html">El Estudio</a>
+  <a href="contacto.html" class="is-active">Contacto</a>
+  <a href="contacto.html" class="btn btn-primary">Escribinos</a>
+</nav>
+
+<main>
+  <section class="container" style="padding-top:96px;padding-bottom:var(--section-gap)">
+    <header style="margin-bottom:64px;padding-top:48px">
+      <h1 class="h-display" style="margin-bottom:24px">Hablemos.</h1>
+      <p class="body-lg text-secondary" style="max-width:640px">
+        Aceptamos encargos y consultas de proyectos en Paraguay y el exterior.
+        Escribínos para iniciar una conversación sobre futuras comisiones.
+      </p>
+    </header>
+
+    <div class="grid items-start">
+      <!-- Formulario -->
+      <div class="col-5 reveal">
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label class="field-label label-caps text-secondary" for="nombre">Nombre</label>
+            <input class="field-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
+          </div>
+          <div class="field">
+            <label class="field-label label-caps text-secondary" for="email">Correo electrónico</label>
+            <input class="field-input" type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="field">
+            <label class="field-label label-caps text-secondary" for="tipoConsulta">Tipo de consulta</label>
+            <select class="field-input" id="tipoConsulta" name="tipoConsulta">
+              <option>Nuevo encargo de proyecto</option>
+              <option>Prensa y medios</option>
+              <option>Consulta laboral</option>
+              <option>Información general</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label label-caps text-secondary" for="mensaje">Mensaje</label>
+            <textarea class="field-input" id="mensaje" name="mensaje" rows="4" placeholder="Contanos sobre tu proyecto..." required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Enviar consulta</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+
+      <!-- Detalles del estudio -->
+      <div class="col-6 col-start-7 reveal" data-delay="100" style="margin-top:16px">
+        <div>
+          <div class="contact-block">
+            <h3 class="label-caps">Oficina central</h3>
+            <p>Av. Mariscal López 1955, Torre 1:20, Piso 3<br>Barrio Villa Morra, Asunción · Paraguay</p>
+          </div>
+          <div class="contact-divider"></div>
+          <div class="info-grid">
+            <div class="contact-block">
+              <h3 class="label-caps">Directo</h3>
+              <p>+595 21 610 123</p>
+            </div>
+            <div class="contact-block">
+              <h3 class="label-caps">General</h3>
+              <p>hola@120arquitectura.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-frame" style="margin-top:64px">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMfnhwzTgfUL0W-_Ej8QJ9CIJHT_qXHhQRvd-8bRTRuhLj-OlBm2Zjwi2mjKiAFmAqttXbE6GnhNff3HsftD8ww3Dz-RjKypdgg7gJ0btN-kHCwRCHqlYvb_OHoBqQjP0fee6p9mnxsuDBdk1n7RYRutgYBA2qEArFsLgitDR1fwV6Jl_xqmuIDavEnqT_WduVmW15m0bAK5pMAPBMKsJNtxKzFHtyxFE-uaq7Zzz8wDQhNyTAQKpQ" alt="Mapa de Asunción en blanco y negro" loading="lazy" data-fallback>
+          <div class="map-pin">
+            <div class="pin-dot"></div>
+            <div class="pin-stem"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+        <span class="brand-name">1:20 Arquitectura</span>
+      </a>
+      <p class="caption">© <span data-year>2025</span> 1:20 Arquitectura. Asunción · Paraguay.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="label-caps">Social</h4>
+      <ul>
+        <li><a href="#" class="caption">Instagram</a></li>
+        <li><a href="#" class="caption">LinkedIn</a></li>
+        <li><a href="#" class="caption">Facebook</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="label-caps">Información</h4>
+      <ul>
+        <li><a href="#" class="caption">Bitácora</a></li>
+        <li><a href="#" class="caption">Privacidad</a></li>
+        <li><a href="contacto.html" class="caption">Trabajá con nosotros</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
