@@ -132,6 +132,42 @@
         </div>
       </div>
     </div>
+
+    <!-- Agendar consulta -->
+    <section class="booking reveal" id="booking" aria-label="Agendá una consulta">
+      <div class="booking-head">
+        <div>
+          <h2 class="h-headline-md">Agendá una consulta</h2>
+          <p class="caption text-secondary">Reunión de 30 minutos · Horario de Asunción (GMT-4)</p>
+        </div>
+        <span class="chip">Gratis</span>
+      </div>
+      <div class="booking-body">
+        <div>
+          <h3 class="booking-label label-caps text-secondary">1 · Elegí el día</h3>
+          <div class="day-strip" id="bookingDays"></div>
+        </div>
+        <div>
+          <h3 class="booking-label label-caps text-secondary">2 · Elegí el horario</h3>
+          <div class="slot-grid" id="bookingSlots"></div>
+        </div>
+        <div>
+          <h3 class="booking-label label-caps text-secondary">3 · Motivo de la reunión</h3>
+          <select class="field-input" id="bookingTipo">
+            <option>Presentación de estudio</option>
+            <option>Proyecto residencial</option>
+            <option>Proyecto comercial / oficinas</option>
+            <option>Intervención patrimonial</option>
+            <option>Proyecto urbano / espacio público</option>
+            <option>Otra consulta</option>
+          </select>
+        </div>
+        <div class="booking-footer">
+          <p class="booking-summary caption text-secondary" id="bookingSummary">Elegí día y horario para confirmar tu reunión.</p>
+          <button class="btn btn-primary booking-submit" id="bookingSubmit" type="button" disabled>Confirmar por WhatsApp</button>
+        </div>
+      </div>
+    </section>
   </section>
 </main>
 

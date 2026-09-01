@@ -623,7 +623,7 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .team-grid { grid-template-columns: repeat(4, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .team-card { cursor: pointer; }
@@ -1189,3 +1189,104 @@ html[data-theme="light"] .icon-sun { display: block; }
 }
 
 .pager a:hover { color: var(--secondary); }
+
+/* ============================================
+   Widget de agenda (booking)
+   ============================================ */
+.booking {
+  border: 1px solid var(--outline-variant);
+  margin-top: 96px;
+}
+
+.booking-head {
+  padding: 32px var(--gutter);
+  border-bottom: 1px solid var(--outline-variant);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.booking-head .caption { margin-top: 8px; }
+
+.booking-body {
+  padding: 32px var(--gutter);
+  display: grid;
+  gap: 40px;
+}
+
+.booking-label {
+  margin-bottom: 16px;
+}
+
+.day-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.day-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 14px 20px;
+  border: 1px solid var(--outline-variant);
+  background: none;
+  color: var(--secondary);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.day-chip:hover { border-color: var(--primary); color: var(--primary); }
+
+.day-chip .dow { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
+.day-chip .dnum { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--primary); }
+.day-chip .dmon { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.day-chip.is-active {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+
+.day-chip.is-active .dnum { color: var(--on-primary); }
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 12px;
+}
+
+.slot-chip {
+  padding: 12px;
+  border: 1px solid var(--outline-variant);
+  background: none;
+  color: var(--secondary);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 16px;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.slot-chip:hover { border-color: var(--primary); color: var(--primary); }
+.slot-chip.is-active { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+
+.booking-footer {
+  border-top: 1px solid var(--outline-variant);
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.booking-summary { max-width: 480px; }
+
+.booking-submit[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+}

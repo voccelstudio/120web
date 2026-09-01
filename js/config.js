@@ -41,6 +41,13 @@ var SITE_CONFIG = {
 
   emailSubject: "Consulta desde el sitio de 1:20 Arquitectura",
 
+  /* Agenda: horarios que se ofrecen en el widget de consultas */
+  bookings: {
+    horarios: ["09:00", "10:00", "11:00", "16:00", "17:00", "18:00"],
+    duracion: "30 minutos",
+    saltarDia: 0 /* 0 = domingo (getDay) */
+  },
+
   /* Proyectos: se usan para el lightbox y los filtros */
   projects: [
     {
@@ -126,6 +133,18 @@ var SITE_CONFIG = {
       resumen: "Centro cultural",
       pagina: "proyectos/pabellon-omega.html",
       imagenes: [IMG.omega, IMG.plaza, IMG.estructura, IMG.hormigon]
+    },
+    {
+      id: "intervencion-ayolas",
+      titulo: "Intervención Ayolas",
+      categoria: "intervencion",
+      categoriaLabel: "Intervención",
+      estado: "Construida",
+      anio: "2022",
+      lugar: "Casco histórico, Asunción",
+      resumen: "Adecuación patrimonial",
+      pagina: "proyectos/intervencion-ayolas.html",
+      imagenes: [IMG.estructura, IMG.interior, IMG.villa, IMG.hormigon]
     }
   ]
 };

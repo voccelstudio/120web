@@ -366,4 +366,129 @@
       form.reset();
     });
   }
+
+  /* ---------- Widget de agenda (booking) ---------- */
+  var booking = document.getElementById("booking");
+  if (booking) {
+    var daysEl = document.getElementById("bookingDays");
+    var slotsEl = document.getElementById("bookingSlots");
+    var summaryEl = document.getElementById("bookingSummary");
+    var tipoEl = document.getElementById("bookingTipo");
+    var submitBtn = document.getElementById("bookingSubmit");
+
+    var bookingsConfig = (window.SITE_CONFIG && window.SITE_CONFIG.bookings) || {};
+    var horarios = bookingsConfig.horarios || ["09:00", "10:00", "11:00", "16:00", "17:00", "18:00"];
+    var saltarDia = typeof bookingsConfig.saltarDia === "number" ? bookingsConfig.saltarDia : 0;
+
+    var DIAS = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
+    var MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+
+    var selection = { fecha: null, fechaLabel: "", slot: null };
+
+    function fmtFecha(d) {
+      return (
+        d.getFullYear() +
+        "-" +
+        String(d.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(d.getDate()).padStart(2, "0")
+      );
+    }
+
+    function renderDays() {
+      var hoy = new Date();
+      var dias = [];
+      for (var i = 0; i < 30 && dias.length < 7; i++) {
+        var d = new Date(hoy);
+        d.setDate(hoy.getDate() + i);
+        if (d.getDay() === saltarDia) continue;
+        dias.push(d);
+      }
+      dias.forEach(function (d) {
+        var chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "day-chip";
+        chip.setAttribute("data-iso", fmtFecha(d));
+        chip.setAttribute("aria-label", "Elegir el día " + DIAS[d.getDay()] + " " + d.getDate() + " de " + MESES[d.getMonth()]);
+        chip.innerHTML =
+          '<span class="dow">' + DIAS[d.getDay()] + '</span>' +
+          '<span class="dnum">' + d.getDate() + '</span>' +
+          '<span class="dmon">' + MESES[d.getMonth()] + '</span>';
+        chip.addEventListener("click", function () {
+          selectDay(this);
+        });
+        daysEl.appendChild(chip);
+      });
+    }
+
+    function renderSlots() {
+      horarios.forEach(function (h) {
+        var chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "slot-chip";
+        chip.textContent = h;
+        chip.addEventListener("click", function () {
+          selectSlot(this);
+        });
+        slotsEl.appendChild(chip);
+      });
+    }
+
+    function selectDay(chip) {
+      document.querySelectorAll(".day-chip.is-active").forEach(function (c) {
+        c.classList.remove("is-active");
+      });
+      chip.classList.add("is-active");
+      var iso = chip.getAttribute("data-iso");
+      selection.fecha = iso;
+      selection.fechaLabel = chip.querySelector(".dow").textContent + " " + chip.querySelector(".dnum").textContent + " " + chip.querySelector(".dmon").textContent;
+      updateSummary();
+    }
+
+    function selectSlot(chip) {
+      document.querySelectorAll(".slot-chip.is-active").forEach(function (c) {
+        c.classList.remove("is-active");
+      });
+      chip.classList.add("is-active");
+      selection.slot = chip.textContent;
+      updateSummary();
+    }
+
+    function tipoTexto() {
+      return tipoEl && tipoEl.options[tipoEl.selectedIndex] ? tipoEl.options[tipoEl.selectedIndex].text : "";
+    }
+
+    function updateSummary() {
+      if (selection.fecha && selection.slot) {
+        summaryEl.textContent =
+          "Listo: " + selection.fechaLabel + " a las " + selection.slot + " (" + (bookingsConfig.duracion || "30 minutos") + "). Confirmamos tu reunión por WhatsApp.";
+        submitBtn.disabled = false;
+      } else {
+        summaryEl.textContent = "Elegí día y horario para confirmar tu reunión.";
+        submitBtn.disabled = true;
+      }
+    }
+
+    submitBtn.addEventListener("click", function () {
+      if (!selection.fecha || !selection.slot) return;
+      var config = window.SITE_CONFIG || {};
+      var wa = config.whatsapp;
+      if (!wa) return;
+
+      var texto =
+        "Hola 1:20 Arquitectura 👋\n" +
+        "Quiero agendar una consulta.\n\n" +
+        "Día: " + selection.fechaLabel + "\n" +
+        "Horario: " + selection.slot + " (hora de Asunción)\n" +
+        "Motivo: " + tipoTexto() + "\n\n" +
+        "¿Me confirman el turno? Gracias.";
+
+      window.open("https://wa.me/" + wa + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+      summaryEl.textContent = "Enviamos tu solicitud por WhatsApp. Te confirmamos el turno."
+    });
+
+    renderDays();
+    renderSlots();
+    updateSummary();
+  }
 })();
