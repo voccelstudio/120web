@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voccelstudio.github.io/120web/sitemap.xml

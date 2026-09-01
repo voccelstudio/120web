@@ -5,39 +5,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1:20 Arquitectura | Estudio de arquitectura en Asunción, Paraguay</title>
 <meta name="description" content="1:20 Arquitectura es un estudio de arquitectura en Asunción, Paraguay. Proyectos residenciales, comerciales y urbanos con claridad estructural y honestidad material.">
+<link rel="canonical" href="https://voccelstudio.github.io/120web/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="1:20 Arquitectura">
+<meta property="og:title" content="1:20 Arquitectura | Estudio de arquitectura en Asunción, Paraguay">
+<meta property="og:description" content="Proyectos residenciales, comerciales y urbanos con claridad estructural y honestidad material. Asunción, Paraguay.">
+<meta property="og:url" content="https://voccelstudio.github.io/120web/">
+<meta property="og:image" content="https://voccelstudio.github.io/120web/img/logo-1-20.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1:20 Arquitectura | Asunción, Paraguay">
+<meta name="twitter:description" content="Estudio de arquitectura con precisión estructural y diseño monolítico.">
 <link rel="icon" type="image/png" href="img/logo-1-20.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Inter:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "1:20 Arquitectura",
+  "url": "https://voccelstudio.github.io/120web/",
+  "logo": "https://voccelstudio.github.io/120web/img/logo-1-20.png",
+  "description": "Estudio de arquitectura en Asunción, Paraguay. Diseño monolítico, claridad estructural y honestidad material.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Mariscal López 1955, Torre 1:20, Piso 3, Barrio Villa Morra",
+    "addressLocality": "Asunción",
+    "addressCountry": "PY"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+595 21 610 123",
+    "email": "hola@120arquitectura.com",
+    "contactType": "customer service",
+    "availableLanguage": ["es"]
+  }
+}
+</script>
 </head>
 <body>
 
-<!-- ===================== Header ===================== -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="index.html" class="brand">
       <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
       <span class="brand-name">1:20 Arquitectura</span>
     </a>
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a href="index.html" class="is-active">Inicio</a>
-      <a href="proyectos.html">Proyectos</a>
-      <a href="estudio.html">El Estudio</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <a href="contacto.html" class="btn btn-outline header-cta">Escribinos</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
+    <div class="header-right">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="is-active">Inicio</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="estudio.html">El Estudio</a>
+        <a href="bitacora.html">Bitácora</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <a href="contacto.html" class="btn btn-outline header-cta">Escribinos</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar entre tema claro y oscuro">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- ===================== Menú móvil ===================== -->
 <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
   <a href="index.html" class="is-active">Inicio</a>
   <a href="proyectos.html">Proyectos</a>
   <a href="estudio.html">El Estudio</a>
+  <a href="bitacora.html">Bitácora</a>
   <a href="contacto.html">Contacto</a>
   <a href="contacto.html" class="btn btn-primary">Escribinos</a>
 </nav>
@@ -50,9 +89,8 @@
     </div>
     <div class="hero-scrim"></div>
     <div class="hero-content">
-
       <h1 class="h-display">Claridad estructural</h1>
-      <p class="body-lg text-secondary">Precisión arquitectónica y diseño monolítico. Creamos espacios que resisten el tiempo y la intención, desde el corazón de Asunción.</p>
+      <p class="body-lg">Precisión arquitectónica y diseño monolítico. Creamos espacios que resisten el tiempo y la intención, desde el corazón de Asunción.</p>
     </div>
   </section>
 
@@ -67,7 +105,7 @@
 
     <div class="grid">
       <article class="col-8 reveal">
-        <a href="proyectos.html" class="project-card">
+        <a href="proyectos/residencia-04.html" class="project-card">
           <div class="project-media aspect-16-9">
             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvX37JH7vnRtfWviNh37xVPstPqfscxvRPtUvtROKrQa3VfTNxuJZkHUr7kWcAQIL571LIt19Sy-f20rqP-ovj6l1xUxbHk7ZSZ0D8SoKTEIPAoi-rjgrfBQOQOoD-CWbfVbh8q3OlUmEls98tkJqWuw0nbPhRQLD_yp0abAaNGe1cbjtolx0cTEGtJRmPzh2iN_W2vLe2c12JRNQGDB-kzhlvwYj3FkEmfzyBSKHwBZDdftRXaxAZ" alt="Interior residencial con muros de hormigón expuesto" loading="lazy" data-fallback>
           </div>
@@ -82,7 +120,7 @@
       </article>
 
       <article class="col-4 reveal" data-delay="120">
-        <a href="proyectos.html" class="project-card">
+        <a href="proyectos/pabellon-x.html" class="project-card">
           <div class="project-media aspect-3-4">
             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTpuGlS3mOuu8QSikeeCyt9NpWwOMHdf7gurWBeWVjQU0_PhutiqieMyo187ws-3TEWPd-EgZHDSqRo7YS5hAqhstFbvxWz_d4TxEO4HJVCExmQhdnEvnePg0H51OGbmZZag9V58yst_4c4fVUEJlz3mtoWFZtSHkQ3AosYh-OCLzRUueleTm000_nLnJ-ODgXfvonDv9giHk0locvqERdtv6dtxFw6aYR3tZDW316UY-6mv_PE1Qm" alt="Fachada con aletas de hormigón generando sombras verticales" loading="lazy" data-fallback>
           </div>
@@ -119,7 +157,6 @@
   </section>
 </main>
 
-<!-- ===================== Footer ===================== -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
@@ -140,7 +177,7 @@
     <div class="footer-col">
       <h4 class="label-caps">Información</h4>
       <ul>
-        <li><a href="#" class="caption">Bitácora</a></li>
+        <li><a href="bitacora.html" class="caption">Bitácora</a></li>
         <li><a href="#" class="caption">Privacidad</a></li>
         <li><a href="contacto.html" class="caption">Trabajá con nosotros</a></li>
       </ul>
@@ -148,6 +185,7 @@
   </div>
 </footer>
 
+<script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

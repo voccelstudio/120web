@@ -846,3 +846,346 @@ textarea.field-input { resize: none; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ============================================
+   Tema claro
+   ============================================ */
+html[data-theme="light"] {
+  --bg: #f5f5f5;
+  --surface-lowest: #ececec;
+  --surface-low: #e4e4e4;
+  --surface: #dcdcdc;
+  --surface-high: #d0d0d0;
+  --surface-highest: #c6c6c6;
+  --primary: #0a0a0a;
+  --on-primary: #ffffff;
+  --secondary: #55504f;
+  --on-surface-variant: #3d3d3d;
+  --outline: #707070;
+  --outline-variant: #c0c0c0;
+}
+
+html[data-theme="light"] .brand-logo { filter: none; }
+
+html[data-theme="light"] .work-overlay .chip {
+  background: #131313;
+}
+
+html[data-theme="light"] .hero-content .text-secondary { color: #c9c6c5; }
+
+/* Texto sobre imágenes: siempre claro */
+.hero-content .h-display { color: #ffffff; }
+.hero-content .body-lg { color: #c9c6c5; }
+
+.work-overlay .h-display,
+.work-overlay .h-headline,
+.work-overlay .h-headline-md { color: #ffffff; }
+
+.work-overlay .chip {
+  border-color: #ffffff;
+  color: #ffffff;
+  background: #131313;
+}
+
+/* ============================================
+   Header right cluster y toggle de tema
+   ============================================ */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  border: 1px solid var(--outline-variant);
+  width: 40px;
+  height: 40px;
+  transition: border-color 0.3s, color 0.3s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+}
+
+.icon-sun { display: none; }
+
+html[data-theme="light"] .icon-moon { display: none; }
+html[data-theme="light"] .icon-sun { display: block; }
+
+@media (max-width: 1023px) {
+  .header-cta { display: none; }
+  .theme-toggle { display: inline-flex; }
+}
+
+/* ============================================
+   Modal de proyecto (lightbox)
+   ============================================ */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--margin-mobile);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  background: #1a1a1a;
+  border: 1px solid #ffffff;
+}
+
+.modal-stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+
+.modal-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.modal-stage img.active { opacity: 1; }
+
+.modal-counter {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: #131313;
+  border: 1px solid #ffffff;
+  padding: 8px 12px;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(19, 19, 19, 0.7);
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.modal-nav:hover { background: #131313; }
+
+.modal-nav.prev { left: 16px; }
+.modal-nav.next { right: 16px; }
+
+.modal-close {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 56px;
+  height: 56px;
+  background: #131313;
+  border: 1px solid #ffffff;
+  border-top: none;
+  border-right: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background 0.3s;
+}
+
+.modal-close:hover { background: #ffffff; color: #131313; }
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-top: 1px solid #444748;
+  background: #131313;
+}
+
+.modal-title .h-headline-md { color: #ffffff; margin-bottom: 4px; }
+.modal-title .caption { color: #c4c7c8; }
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.modal-actions .btn { color: #ffffff; border-color: #ffffff; font-size: 12px; padding: 10px 20px; }
+.modal-actions .btn:hover { background: #ffffff; color: #131313; }
+
+@media (max-width: 640px) {
+  .modal-nav.prev { left: 8px; }
+  .modal-nav.next { right: 8px; }
+  .modal-body { padding: 20px; }
+}
+
+/* ============================================
+   Bitácora (journal)
+   ============================================ */
+.post {
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.post summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post summary::-webkit-details-marker { display: none; }
+
+.post summary:focus-visible { outline: 1px solid var(--primary); outline-offset: 4px; }
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.post-meta .chip { color: var(--secondary); }
+
+.post-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+.post summary:hover .post-title { color: var(--secondary); }
+
+.post-indicator {
+  align-self: flex-start;
+  margin-left: auto;
+  color: var(--outline);
+}
+
+.post[open] .post-indicator { transform: rotate(90deg); }
+
+.post-content {
+  padding-bottom: 40px;
+  max-width: 760px;
+}
+
+.post-content p { margin-bottom: 20px; color: var(--on-surface-variant); }
+.post-content p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.6em;
+  float: left;
+  line-height: 1;
+  padding-right: 8px;
+  color: var(--primary);
+}
+
+/* ============================================
+   Página de proyecto individual
+   ============================================ */
+.proj-hero {
+  padding: 128px 0 64px;
+}
+
+.proj-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.proj-lead {
+  max-width: 720px;
+  margin-top: 48px;
+}
+
+.proj-gallery .grid { row-gap: var(--gutter); }
+
+.proj-media {
+  border: 1px solid var(--outline-variant);
+  overflow: hidden;
+}
+
+.proj-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.proj-media img:hover { transform: scale(1.03); }
+
+.aspect-16-9 { aspect-ratio: 16 / 9; }
+.aspect-4-3 { aspect-ratio: 4 / 3; }
+
+.specs {
+  border-top: 1px solid var(--outline-variant);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--outline-variant);
+  flex-wrap: wrap;
+}
+
+.spec-row dt { color: var(--secondary); }
+.spec-row dd { color: var(--primary); text-align: right; }
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--outline-variant);
+  padding-top: 32px;
+  margin-top: 64px;
+  flex-wrap: wrap;
+}
+
+.pager a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+}
+
+.pager a:hover { color: var(--secondary); }
