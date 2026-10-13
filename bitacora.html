@@ -15,18 +15,19 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bitácora | 1:20 Arquitectura">
 <meta name="twitter:description" content="Notas y reflexiones del estudio.">
-<link rel="icon" type="image/png" href="img/logo-1-20.png">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="apple-touch-icon" href="img/logo-1-20.png"><meta name="theme-color" content="#131313">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Inter:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="index.html" class="brand">
-      <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+      <svg class="brand-logo" viewBox="0 0 240 240" width="44" height="44" role="img" aria-label="1:20 Arquitectura"><rect width="240" height="240" fill="var(--logo-bg)"/><path d="M34 75 L63 44 L63 204" fill="none" stroke="var(--logo-fg)" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="6"/><line x1="98" y1="0" x2="98" y2="240" stroke="var(--logo-mid)" stroke-width="4"/><path d="M136 107 C136 95 149 88 158 92 C166 96 166 106 158 113 L134 144 L164 144" fill="none" stroke="var(--logo-mid)" stroke-width="12" stroke-linejoin="round"/><ellipse cx="194" cy="118" rx="15" ry="26" fill="none" stroke="var(--logo-mid)" stroke-width="12"/><line x1="114" y1="168" x2="228" y2="168" stroke="var(--logo-fg)" stroke-width="4"/><text x="171" y="198" text-anchor="middle" textLength="114" lengthAdjust="spacingAndGlyphs" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="var(--logo-mid)">ARQUITECTURA</text></svg>
       <span class="brand-name">1:20 Arquitectura</span>
     </a>
     <div class="header-right">
@@ -58,105 +59,65 @@
   <a href="contacto.html" class="btn btn-primary">Escribinos</a>
 </nav>
 
-<main>
+<main id="main">
   <section class="section container">
     <header style="margin-bottom:16px">
+      <span class="sec-num"><b>D.01</b> Bitácora</span>
       <h1 class="h-display" style="margin-bottom:24px">Bitácora</h1>
       <p class="body-lg text-secondary" style="max-width:620px">
         Notas de oficio, materiales y ciudad. Lo que estamos pensando y construyendo, en primera escala.
       </p>
+      <a href="rss.xml" class="rss-link label-caps" style="margin-top:20px" type="application/rss+xml">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><path d="M4 11a9 9 0 0 1 9 9h-3A6 6 0 0 0 4 14z"/><path d="M4 4a16 16 0 0 1 16 16h-3A13 13 0 0 0 4 7z"/></svg>
+        Suscribirse al feed
+      </a>
     </header>
 
-    <div style="margin-top:80px">
+    <div style="margin-top:72px">
       <!-- Artículo 1 -->
-      <details class="post reveal">
-        <summary>
+      <article class="post reveal">
+        <a href="bitacora/hormigon-humedad-memoria.html" class="post-teaser">
           <div class="post-meta">
             <span class="chip">Materiales</span>
             <span class="caption text-dim">12 · 03 · 2026</span>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:16px">
-            <h2 class="post-title">Hormigón, humedad y memoria</h2>
-            <span class="post-indicator label-caps">Leer →</span>
-          </div>
-        </summary>
-        <div class="post-content">
-          <p>
-            En Paraguay el tiempo es generoso con el hormigón pero despiadado con quien lo descuida.
-            La humedad relativa del aire rondan los 70% buena parte del año, y el delta térmico entre
-            un mediodía de enero y una noche de junio es una condición de proyecto, no un detalle constructivo.
-          </p>
-          <p>
-            Por eso diseñamos como si el agua fuera un actor permanente: aleros que la alejan, superficies que la
-            deslizan, juntas que la respiran. Un muro de hormigón aparente no envejece mal si se lo proyecta para
-            que la lluvia, simplemente, pase de largo. La pátina que queda no es suciedad; es memoria.
-          </p>
-          <p>
-            Nuestra disciplina es esa: no pelear contra el clima, sino negociar con él en la mesa de dibujo.
-            Esa es, quizá, la diferencia entre construir y edificar con la región.
-          </p>
-        </div>
-      </details>
+          <h2 class="post-title">Hormigón, humedad y memoria</h2>
+          <p class="post-excerpt body-lg">En Paraguay el tiempo es generoso con el hormigón pero despiadado con quien lo descuida. Cómo proyectamos para que la lluvia pase de largo.</p>
+          <span class="label-caps link-arrow">Leer nota
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </article>
 
       <!-- Artículo 2 -->
-      <details class="post reveal">
-        <summary>
+      <article class="post reveal">
+        <a href="bitacora/rio-linea-de-proyecto.html" class="post-teaser">
           <div class="post-meta">
             <span class="chip">Ciudad</span>
             <span class="caption text-dim">25 · 05 · 2026</span>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:16px">
-            <h2 class="post-title">El río como línea de proyecto</h2>
-            <span class="post-indicator label-caps">Leer →</span>
-          </div>
-        </summary>
-        <div class="post-content">
-          <p>
-            Asunción le da la espalda a su río. Casi ninguna manzana de su microcentro dialoga con la Bahía,
-            y el remanso que deriva hacia el Chaco parece existir en otro plano. Pensamos que esa costura es
-            el gran proyecto pendiente de la ciudad, y no por nostalgia ribereña.
-          </p>
-          <p>
-            Cuando proyectamos espacios públicos, volvemos una y otra vez a la línea de agua como estructura:
-            el paseo que ordena, el borde que contiene, la sombra que acompaña. El río es un datum urbano —
-            una cota cero desde la cual leer toda la ciudad.
-          </p>
-          <p>
-            Nuestro concurso de Plaza Cívica 04 nació de esa intuición: un plano que se abre al paisaje como un
-            mirador contenido. Los ríos estructuran; nosotros solo dibujamos lo que ellos sugieren.
-          </p>
-        </div>
-      </details>
+          <h2 class="post-title">El río como línea de proyecto</h2>
+          <p class="post-excerpt body-lg">Asunción le da la espalda a su río. Pensamos que esa costura es el gran proyecto pendiente de la ciudad, y no por nostalgia ribereña.</p>
+          <span class="label-caps link-arrow">Leer nota
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </article>
 
       <!-- Artículo 3 -->
-      <details class="post reveal">
-        <summary>
+      <article class="post reveal">
+        <a href="bitacora/escala-1-20-nombre.html" class="post-teaser">
           <div class="post-meta">
             <span class="chip">Oficina</span>
             <span class="caption text-dim">08 · 07 · 2026</span>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:16px">
-            <h2 class="post-title">Escala 1:20: el porqué de nuestro nombre</h2>
-            <span class="post-indicator label-caps">Leer →</span>
-          </div>
-        </summary>
-        <div class="post-content">
-          <p>
-            En la escala 1:20 un tabique deja de ser una línea y se vuelve objeto: el espesor, la tronera, el
-            encuentro con el piso, la sombra que arroja. Es la escala del detalle constructivo, la del carpintero
-            y la del aparejador. También es la escala a la que nadie quiere dibujar: exige decisiones.
-          </p>
-          <p>
-            Nombramos el estudio así como un recordatorio permanente. Antes de la forma, está el encuentro.
-            Antes del espacio, la junta que lo hace posible. Trabajar a 1:20 es aceptar que la arquitectura se
-            decide en el milímetro compartido entre dos materiales sinceros.
-          </p>
-          <p>
-            Todo lo demás —la fachada, el gesto, la imagen— es consecuencia de esa honestidad. Si el detalle está
-            resuelto, el edificio se sostiene solo, también en el sentido moral del término.
-          </p>
-        </div>
-      </details>
+          <h2 class="post-title">Escala 1:20: el porqué de nuestro nombre</h2>
+          <p class="post-excerpt body-lg">A escala 1:20 un tabique deja de ser una línea y se vuelve objeto. Nombramos el estudio así como un recordatorio permanente.</p>
+          <span class="label-caps link-arrow">Leer nota
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </article>
     </div>
   </section>
 </main>
@@ -165,7 +126,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="brand">
-        <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+        <svg class="brand-logo" viewBox="0 0 240 240" width="44" height="44" role="img" aria-label="1:20 Arquitectura"><rect width="240" height="240" fill="var(--logo-bg)"/><path d="M34 75 L63 44 L63 204" fill="none" stroke="var(--logo-fg)" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="6"/><line x1="98" y1="0" x2="98" y2="240" stroke="var(--logo-mid)" stroke-width="4"/><path d="M136 107 C136 95 149 88 158 92 C166 96 166 106 158 113 L134 144 L164 144" fill="none" stroke="var(--logo-mid)" stroke-width="12" stroke-linejoin="round"/><ellipse cx="194" cy="118" rx="15" ry="26" fill="none" stroke="var(--logo-mid)" stroke-width="12"/><line x1="114" y1="168" x2="228" y2="168" stroke="var(--logo-fg)" stroke-width="4"/><text x="171" y="198" text-anchor="middle" textLength="114" lengthAdjust="spacingAndGlyphs" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="var(--logo-mid)">ARQUITECTURA</text></svg>
         <span class="brand-name">1:20 Arquitectura</span>
       </a>
       <p class="caption">© <span data-year>2025</span> 1:20 Arquitectura. Asunción · Paraguay.</p>

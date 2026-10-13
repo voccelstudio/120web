@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1:20 Arquitectura — Bitácora</title>
+    <link>https://voccelstudio.github.io/120web/bitacora.html</link>
+    <atom:link href="https://voccelstudio.github.io/120web/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Notas de oficio, materiales y ciudad del estudio 1:20 Arquitectura, Asunción, Paraguay.</description>
+    <language>es-py</language>
+    <lastBuildDate>Wed, 08 Jul 2026 10:00:00 -0400</lastBuildDate>
+
+    <item>
+      <title>Escala 1:20: el porqué de nuestro nombre</title>
+      <link>https://voccelstudio.github.io/120web/bitacora/escala-1-20-nombre.html</link>
+      <guid isPermaLink="true">https://voccelstudio.github.io/120web/bitacora/escala-1-20-nombre.html</guid>
+      <category>Oficina</category>
+      <pubDate>Wed, 08 Jul 2026 10:00:00 -0400</pubDate>
+      <description>A escala 1:20 un tabique deja de ser una línea y se vuelve objeto. Nombramos el estudio así como un recordatorio permanente.</description>
+    </item>
+
+    <item>
+      <title>El río como línea de proyecto</title>
+      <link>https://voccelstudio.github.io/120web/bitacora/rio-linea-de-proyecto.html</link>
+      <guid isPermaLink="true">https://voccelstudio.github.io/120web/bitacora/rio-linea-de-proyecto.html</guid>
+      <category>Ciudad</category>
+      <pubDate>Mon, 25 May 2026 10:00:00 -0400</pubDate>
+      <description>Asunción le da la espalda a su río. Pensamos que esa costura es el gran proyecto pendiente de la ciudad.</description>
+    </item>
+
+    <item>
+      <title>Hormigón, humedad y memoria</title>
+      <link>https://voccelstudio.github.io/120web/bitacora/hormigon-humedad-memoria.html</link>
+      <guid isPermaLink="true">https://voccelstudio.github.io/120web/bitacora/hormigon-humedad-memoria.html</guid>
+      <category>Materiales</category>
+      <pubDate>Thu, 12 Mar 2026 10:00:00 -0400</pubDate>
+      <description>En Paraguay el tiempo es generoso con el hormigón pero despiadado con quien lo descuida. Cómo proyectamos para que la lluvia pase de largo.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Bitácora 01">
+<rect width="1600" height="900" fill="#141414"/>
+<defs><pattern id="g41" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/></pattern><pattern id="G41" width="170" height="170" patternUnits="userSpaceOnUse"><path d="M170 0H0V170" fill="none" stroke="rgba(255,255,255,0.075)" stroke-width="1"/></pattern></defs>
+<rect width="1600" height="900" fill="url(#g41)"/>
+<rect width="1600" height="900" fill="url(#G41)"/>
+<rect x="27" y="27" width="1546" height="846" fill="none" stroke="#3a3d3e" stroke-width="1"/>
+<path d="M27 58 L27 27 L58 27" fill="none" stroke="#d9503a" stroke-width="2"/>
+<path d="M1573 58 L1573 27 L1542 27" fill="none" stroke="#d9503a" stroke-width="2"/>
+<path d="M27 842 L27 873 L58 873" fill="none" stroke="#d9503a" stroke-width="2"/>
+<path d="M1573 842 L1573 873 L1542 873" fill="none" stroke="#d9503a" stroke-width="2"/>
+<line x1="27" y1="720.0" x2="1573" y2="720.0" stroke="#3a3d3e" stroke-width="1.5"/>
+<rect x="255.1" y="200.7" width="168.1" height="519.3" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<rect x="463.9" y="422.5" width="211.4" height="297.5" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<rect x="694.5" y="459.8" width="211.0" height="260.2" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<rect x="948.5" y="252.1" width="163.9" height="467.9" fill="#232323" stroke="#333333" stroke-width="1"/>
+<rect x="1160.4" y="560.0" width="200.9" height="160.0" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<line x1="224" y1="792" x2="1376" y2="792" stroke="#3a3d3e" stroke-width="1"/>
+<line x1="224" y1="786" x2="224" y2="798" stroke="#8e9192" stroke-width="1"/>
+<line x1="1376" y1="786" x2="1376" y2="798" stroke="#8e9192" stroke-width="1"/>
+<g>
+<rect x="41" y="847" width="184" height="8" fill="none" stroke="#8e9192" stroke-width="1"/>
+<rect x="41" y="847" width="46" height="8" fill="#8e9192"/>
+<rect x="133" y="847" width="46" height="8" fill="#8e9192"/>
+<text x="41" y="841" fill="#8e9192" font-family="monospace" font-size="11" letter-spacing="1">0</text>
+<text x="225" y="841" fill="#8e9192" font-family="monospace" font-size="11" letter-spacing="1" text-anchor="end">1:20</text>
+</g>
+<g>
+<circle cx="1553" cy="853" r="25" fill="none" stroke="#8e9192" stroke-width="1"/>
+<path d="M1553 828 L1566 863 L1553 856 L1540 863 Z" fill="#d9503a"/>
+</g>
+<g>
+<line x1="540" y1="749" x2="1060" y2="749" stroke="#3a3d3e" stroke-width="1"/>
+<text x="800" y="783" fill="#8e9192" font-family="monospace" font-size="13" letter-spacing="3" text-anchor="middle">BITÁCORA 01</text>
+<text x="800" y="805" fill="#d9503a" font-family="monospace" font-size="10" letter-spacing="4" text-anchor="middle">IMAGEN PENDIENTE</text>
+</g>
+</svg>

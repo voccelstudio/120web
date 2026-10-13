@@ -15,18 +15,19 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Contacto | 1:20 Arquitectura">
 <meta name="twitter:description" content="Asunción · Paraguay">
-<link rel="icon" type="image/png" href="img/logo-1-20.png">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg"><link rel="apple-touch-icon" href="img/logo-1-20.png"><meta name="theme-color" content="#131313">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Inter:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="index.html" class="brand">
-      <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+      <svg class="brand-logo" viewBox="0 0 240 240" width="44" height="44" role="img" aria-label="1:20 Arquitectura"><rect width="240" height="240" fill="var(--logo-bg)"/><path d="M34 75 L63 44 L63 204" fill="none" stroke="var(--logo-fg)" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="6"/><line x1="98" y1="0" x2="98" y2="240" stroke="var(--logo-mid)" stroke-width="4"/><path d="M136 107 C136 95 149 88 158 92 C166 96 166 106 158 113 L134 144 L164 144" fill="none" stroke="var(--logo-mid)" stroke-width="12" stroke-linejoin="round"/><ellipse cx="194" cy="118" rx="15" ry="26" fill="none" stroke="var(--logo-mid)" stroke-width="12"/><line x1="114" y1="168" x2="228" y2="168" stroke="var(--logo-fg)" stroke-width="4"/><text x="171" y="198" text-anchor="middle" textLength="114" lengthAdjust="spacingAndGlyphs" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="var(--logo-mid)">ARQUITECTURA</text></svg>
       <span class="brand-name">1:20 Arquitectura</span>
     </a>
     <div class="header-right">
@@ -58,9 +59,10 @@
   <a href="contacto.html" class="btn btn-primary">Escribinos</a>
 </nav>
 
-<main>
+<main id="main">
   <section class="container" style="padding-top:96px;padding-bottom:var(--section-gap)">
     <header style="margin-bottom:64px;padding-top:48px">
+      <span class="sec-num"><b>C.01</b> Contacto</span>
       <h1 class="h-display" style="margin-bottom:24px">Hablemos.</h1>
       <p class="body-lg text-secondary" style="max-width:640px">
         Aceptamos encargos y consultas de proyectos en Paraguay y el exterior.
@@ -93,7 +95,20 @@
             <label class="field-label label-caps text-secondary" for="mensaje">Mensaje</label>
             <textarea class="field-input" id="mensaje" name="mensaje" rows="4" placeholder="Contanos sobre tu proyecto..." required></textarea>
           </div>
-          <button class="btn btn-primary" type="submit">Enviar consulta</button>
+          <div class="field">
+            <span class="field-label label-caps text-secondary">¿Cómo preferís que te respondamos?</span>
+            <div class="channel-picker" id="channelPicker" role="radiogroup" aria-label="Canal de contacto">
+              <button type="button" class="channel-opt is-active" data-channel="whatsapp" role="radio" aria-checked="true">
+                <span class="co-title">WhatsApp</span>
+                <span class="co-desc">Respuesta rápida en horario laboral</span>
+              </button>
+              <button type="button" class="channel-opt" data-channel="email" role="radio" aria-checked="false">
+                <span class="co-title">Correo</span>
+                <span class="co-desc">Para briefs detallados con archivos</span>
+              </button>
+            </div>
+          </div>
+          <button class="btn btn-accent" type="submit">Enviar consulta</button>
           <p class="form-status" id="formStatus" role="status"></p>
         </form>
       </div>
@@ -124,7 +139,7 @@
         </div>
 
         <div class="map-frame" style="margin-top:64px">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMfnhwzTgfUL0W-_Ej8QJ9CIJHT_qXHhQRvd-8bRTRuhLj-OlBm2Zjwi2mjKiAFmAqttXbE6GnhNff3HsftD8ww3Dz-RjKypdgg7gJ0btN-kHCwRCHqlYvb_OHoBqQjP0fee6p9mnxsuDBdk1n7RYRutgYBA2qEArFsLgitDR1fwV6Jl_xqmuIDavEnqT_WduVmW15m0bAK5pMAPBMKsJNtxKzFHtyxFE-uaq7Zzz8wDQhNyTAQKpQ" alt="Mapa de Asunción en blanco y negro" loading="lazy" data-fallback>
+          <img src="img/ph/mapa.svg" alt="Mapa de Asunción en blanco y negro" loading="lazy" data-fallback>
           <div class="map-pin">
             <div class="pin-dot"></div>
             <div class="pin-stem"></div>
@@ -175,7 +190,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="brand">
-        <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
+        <svg class="brand-logo" viewBox="0 0 240 240" width="44" height="44" role="img" aria-label="1:20 Arquitectura"><rect width="240" height="240" fill="var(--logo-bg)"/><path d="M34 75 L63 44 L63 204" fill="none" stroke="var(--logo-fg)" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="6"/><line x1="98" y1="0" x2="98" y2="240" stroke="var(--logo-mid)" stroke-width="4"/><path d="M136 107 C136 95 149 88 158 92 C166 96 166 106 158 113 L134 144 L164 144" fill="none" stroke="var(--logo-mid)" stroke-width="12" stroke-linejoin="round"/><ellipse cx="194" cy="118" rx="15" ry="26" fill="none" stroke="var(--logo-mid)" stroke-width="12"/><line x1="114" y1="168" x2="228" y2="168" stroke="var(--logo-fg)" stroke-width="4"/><text x="171" y="198" text-anchor="middle" textLength="114" lengthAdjust="spacingAndGlyphs" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="var(--logo-mid)">ARQUITECTURA</text></svg>
         <span class="brand-name">1:20 Arquitectura</span>
       </a>
       <p class="caption">© <span data-year>2025</span> 1:20 Arquitectura. Asunción · Paraguay.</p>

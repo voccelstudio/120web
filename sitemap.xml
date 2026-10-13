@@ -70,4 +70,22 @@
     <lastmod>2026-09-01</lastmod>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://voccelstudio.github.io/120web/bitacora/hormigon-humedad-memoria.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://voccelstudio.github.io/120web/bitacora/rio-linea-de-proyecto.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://voccelstudio.github.io/120web/bitacora/escala-1-20-nombre.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

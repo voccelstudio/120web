@@ -4,6 +4,29 @@
 (function () {
   "use strict";
 
+  /* ---------- Utilidad: trampa de foco (accesibilidad) ---------- */
+  var FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  function focusablesIn(container) {
+    return Array.prototype.filter.call(container.querySelectorAll(FOCUSABLE), function (el) {
+      return el.offsetParent !== null || el === document.activeElement;
+    });
+  }
+
+  function trapFocus(container, e) {
+    var items = focusablesIn(container);
+    if (!items.length) return;
+    var first = items[0];
+    var last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
   /* ---------- Tema claro / oscuro ---------- */
   var root = document.documentElement;
   var savedTheme = null;
@@ -24,6 +47,8 @@
       var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", next === "light" ? "#f4f3f1" : "#131313");
       themeToggle.setAttribute(
         "aria-label",
         next === "light" ? "Cambiar al tema oscuro" : "Cambiar al tema claro"
@@ -46,7 +71,7 @@
     onScroll();
   }
 
-  /* ---------- Menú móvil ---------- */
+  /* ---------- Menú móvil (con foco trampado) ---------- */
   var navToggle = document.getElementById("navToggle");
   var mobileMenu = document.getElementById("mobileMenu");
   var MENU_ICON =
@@ -55,28 +80,38 @@
     '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
   if (navToggle && mobileMenu) {
-    var closeMenu = function () {
+    var closeMenu = function (refocus) {
       mobileMenu.classList.remove("open");
       document.body.classList.remove("no-scroll");
       navToggle.setAttribute("aria-expanded", "false");
       navToggle.setAttribute("aria-label", "Abrir menú");
       navToggle.innerHTML = MENU_ICON;
+      document.removeEventListener("keydown", menuKeydown);
+      if (refocus) navToggle.focus();
+    };
+
+    var menuKeydown = function (e) {
+      if (e.key === "Escape") { closeMenu(true); return; }
+      if (e.key === "Tab") trapFocus(mobileMenu, e);
     };
 
     navToggle.addEventListener("click", function () {
       if (mobileMenu.classList.contains("open")) {
-        closeMenu();
+        closeMenu(false);
       } else {
         mobileMenu.classList.add("open");
         document.body.classList.add("no-scroll");
         navToggle.setAttribute("aria-expanded", "true");
         navToggle.setAttribute("aria-label", "Cerrar menú");
         navToggle.innerHTML = CLOSE_ICON;
+        document.addEventListener("keydown", menuKeydown);
+        var first = focusablesIn(mobileMenu)[0];
+        if (first) first.focus();
       }
     });
 
     mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", function () { closeMenu(false); });
     });
   }
 
@@ -110,11 +145,11 @@
     "data:image/svg+xml;charset=utf-8," +
     encodeURIComponent(
       '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">' +
-        '<defs><pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse">' +
-        '<path d="M32 0H0V32" fill="none" stroke="#2a2a2a" stroke-width="1"/></pattern></defs>' +
-        '<rect width="1200" height="800" fill="#20201f"/>' +
+        '<defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse">' +
+        '<path d="M24 0H0V24" fill="none" stroke="#2a2a2a" stroke-width="1"/></pattern></defs>' +
+        '<rect width="1200" height="800" fill="#141414"/>' +
         '<rect width="1200" height="800" fill="url(#g)"/>' +
-        '<text x="600" y="400" fill="#8e9192" font-family="monospace" font-size="14" letter-spacing="4" text-anchor="middle">1:20 ARQUITECTURA</text>' +
+        '<text x="600" y="400" fill="#8e9192" font-family="monospace" font-size="13" letter-spacing="4" text-anchor="middle">1:20 ARQUITECTURA</text>' +
         "</svg>"
     );
 
@@ -165,6 +200,8 @@
         var counter = document.getElementById("projectCounter");
         if (counter && active !== "todos") {
           counter.textContent = "[" + String(visible).padStart(2, "0") + "]";
+        } else if (counter) {
+          counter.textContent = "[" + String(cards.length).padStart(2, "0") + "]";
         }
       });
     });
@@ -176,14 +213,13 @@
     if (total) el.textContent = "01 / " + total;
   });
 
-  /* ---------- Lightbox de proyectos (proyectos.html) ---------- */
+  /* ---------- Lightbox de proyectos (con foco trampado) ---------- */
   if (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.projects) {
     var projectsById = {};
     SITE_CONFIG.projects.forEach(function (p) {
       projectsById[p.id] = p;
     });
 
-    /* Contenedor modal sobre la marcha */
     var modal = document.createElement("div");
     modal.className = "modal";
     modal.setAttribute("role", "dialog");
@@ -209,14 +245,13 @@
       "</div>" +
       '<div class="modal-actions">' +
       '<a class="btn btn-outline" data-modal-link href="#">Ver proyecto</a>' +
-      '<a class="btn btn-primary" data-modal-contact href="contacto.html">Iniciar uno similar</a>' +
+      '<a class="btn btn-accent" data-modal-contact href="contacto.html">Iniciar uno similar</a>' +
       "</div>" +
       "</div>" +
       "</div>";
     document.body.appendChild(modal);
 
-    var stagesEls = modal.querySelectorAll(".modal-stage");
-    var stageEl = stagesEls[0];
+    var stageEl = modal.querySelector(".modal-stage");
     var imgEls = [];
     var counterEl = modal.querySelector("[data-modal-counter]");
     var titleEl = modal.querySelector("[data-modal-title]");
@@ -224,6 +259,7 @@
     var linkEl = modal.querySelector("[data-modal-link]");
     var current = 0;
     var activeProject = null;
+    var lastFocused = null;
 
     function buildImages(project) {
       imgEls.forEach(function (img) { img.remove(); });
@@ -247,8 +283,9 @@
         String(current + 1).padStart(2, "0") + " / " + String(imgEls.length).padStart(2, "0");
     }
 
-    function openModal(project) {
+    function openModal(project, trigger) {
       activeProject = project;
+      lastFocused = trigger || document.activeElement;
       buildImages(project);
       titleEl.textContent = project.titulo;
       subtitleEl.textContent =
@@ -257,11 +294,22 @@
       modal.classList.add("open");
       document.body.classList.add("no-scroll");
       showSlide(0);
+      document.addEventListener("keydown", modalKeydown);
+      modal.querySelector("[data-modal-close]").focus();
     }
 
     function closeModal() {
       modal.classList.remove("open");
       document.body.classList.remove("no-scroll");
+      document.removeEventListener("keydown", modalKeydown);
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    function modalKeydown(e) {
+      if (e.key === "Escape") { closeModal(); return; }
+      if (e.key === "ArrowLeft") showSlide(current - 1);
+      if (e.key === "ArrowRight") showSlide(current + 1);
+      if (e.key === "Tab") trapFocus(modal, e);
     }
 
     modal.addEventListener("click", function (e) {
@@ -276,14 +324,6 @@
       showSlide(current + 1);
     });
 
-    document.addEventListener("keydown", function (e) {
-      if (!modal.classList.contains("open")) return;
-      if (e.key === "Escape") closeModal();
-      if (e.key === "ArrowLeft") showSlide(current - 1);
-      if (e.key === "ArrowRight") showSlide(current + 1);
-    });
-
-    /* Tarjetas que abren el lightbox */
     document.querySelectorAll("[data-open-project]").forEach(function (card) {
       card.setAttribute("tabindex", "0");
       card.setAttribute("role", "button");
@@ -291,7 +331,7 @@
 
       var openCard = function () {
         var project = projectsById[card.getAttribute("data-open-project")];
-        if (project) openModal(project);
+        if (project) openModal(project, card);
       };
 
       card.addEventListener("click", openCard);
@@ -304,7 +344,22 @@
     });
   }
 
-  /* ---------- Formulario de contacto → WhatsApp / Email ---------- */
+  /* ---------- Selector de canal de contacto ---------- */
+  var channel = "whatsapp";
+  var channelPicker = document.getElementById("channelPicker");
+  if (channelPicker) {
+    channelPicker.querySelectorAll(".channel-opt").forEach(function (opt) {
+      opt.addEventListener("click", function () {
+        channel = opt.getAttribute("data-channel");
+        channelPicker.querySelectorAll(".channel-opt").forEach(function (o) {
+          o.classList.toggle("is-active", o === opt);
+          o.setAttribute("aria-checked", o === opt ? "true" : "false");
+        });
+      });
+    });
+  }
+
+  /* ---------- Formulario de contacto → WhatsApp O Email ---------- */
   var form = document.getElementById("contactForm");
   if (form) {
     var status = document.getElementById("formStatus");
@@ -313,7 +368,7 @@
       var nombre = document.getElementById("nombre").value.trim();
       var email = document.getElementById("email").value.trim();
       var tipo = document.getElementById("tipoConsulta");
-      var tipoTexto = tipo.options[tipo.selectedIndex]
+      var tipoTexto = tipo && tipo.options[tipo.selectedIndex]
         ? tipo.options[tipo.selectedIndex].text
         : "";
       var mensaje = document.getElementById("mensaje").value.trim();
@@ -339,28 +394,24 @@
       var wa = config.whatsapp;
       var mail = config.email || "";
 
-      if (wa) {
+      if (status) status.classList.remove("ok", "error");
+
+      if (channel === "whatsapp" && wa) {
         window.open("https://wa.me/" + wa + "?text=" + texto, "_blank", "noopener");
-      }
-
-      if (status) {
-        status.classList.remove("error");
-        status.textContent =
-          wa
-            ? "Abrimos WhatsApp con tu consulta lista para enviar. Si no se abrió, contactanos por correo."
-            : "Abriendo tu correo...";
-        status.classList.add("ok");
-      }
-
-      if (mail) {
+        if (status) {
+          status.textContent = "Abrimos WhatsApp con tu consulta lista para enviar.";
+          status.classList.add("ok");
+        }
+      } else if (mail) {
         var subject = encodeURIComponent(config.emailSubject || "Consulta");
-        var mailto = "mailto:" + mail + "?subject=" + subject + "&body=" + texto;
-        var link = document.createElement("a");
-        link.href = mailto;
-        link.style.display = "none";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        window.location.href = "mailto:" + mail + "?subject=" + subject + "&body=" + texto;
+        if (status) {
+          status.textContent = "Abriendo tu correo con el mensaje redactado.";
+          status.classList.add("ok");
+        }
+      } else if (status) {
+        status.textContent = "No hay canal configurado. Escribinos directamente.";
+        status.classList.add("error");
       }
 
       form.reset();
@@ -387,10 +438,8 @@
 
     function fmtFecha(d) {
       return (
-        d.getFullYear() +
-        "-" +
-        String(d.getMonth() + 1).padStart(2, "0") +
-        "-" +
+        d.getFullYear() + "-" +
+        String(d.getMonth() + 1).padStart(2, "0") + "-" +
         String(d.getDate()).padStart(2, "0")
       );
     }
@@ -414,9 +463,7 @@
           '<span class="dow">' + DIAS[d.getDay()] + '</span>' +
           '<span class="dnum">' + d.getDate() + '</span>' +
           '<span class="dmon">' + MESES[d.getMonth()] + '</span>';
-        chip.addEventListener("click", function () {
-          selectDay(this);
-        });
+        chip.addEventListener("click", function () { selectDay(this); });
         daysEl.appendChild(chip);
       });
     }
@@ -427,28 +474,21 @@
         chip.type = "button";
         chip.className = "slot-chip";
         chip.textContent = h;
-        chip.addEventListener("click", function () {
-          selectSlot(this);
-        });
+        chip.addEventListener("click", function () { selectSlot(this); });
         slotsEl.appendChild(chip);
       });
     }
 
     function selectDay(chip) {
-      document.querySelectorAll(".day-chip.is-active").forEach(function (c) {
-        c.classList.remove("is-active");
-      });
+      document.querySelectorAll(".day-chip.is-active").forEach(function (c) { c.classList.remove("is-active"); });
       chip.classList.add("is-active");
-      var iso = chip.getAttribute("data-iso");
-      selection.fecha = iso;
+      selection.fecha = chip.getAttribute("data-iso");
       selection.fechaLabel = chip.querySelector(".dow").textContent + " " + chip.querySelector(".dnum").textContent + " " + chip.querySelector(".dmon").textContent;
       updateSummary();
     }
 
     function selectSlot(chip) {
-      document.querySelectorAll(".slot-chip.is-active").forEach(function (c) {
-        c.classList.remove("is-active");
-      });
+      document.querySelectorAll(".slot-chip.is-active").forEach(function (c) { c.classList.remove("is-active"); });
       chip.classList.add("is-active");
       selection.slot = chip.textContent;
       updateSummary();
@@ -484,7 +524,7 @@
         "¿Me confirman el turno? Gracias.";
 
       window.open("https://wa.me/" + wa + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
-      summaryEl.textContent = "Enviamos tu solicitud por WhatsApp. Te confirmamos el turno."
+      summaryEl.textContent = "Enviamos tu solicitud por WhatsApp. Te confirmamos el turno.";
     });
 
     renderDays();

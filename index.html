@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,42 +15,59 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1:20 Arquitectura | Asunción, Paraguay">
 <meta name="twitter:description" content="Estudio de arquitectura con precisión estructural y diseño monolítico.">
-<link rel="icon" type="image/png" href="img/logo-1-20.png">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/logo-1-20.png">
+<meta name="theme-color" content="#131313">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Inter:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/ph/hero.svg" fetchpriority="high">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "1:20 Arquitectura",
-  "url": "https://voccelstudio.github.io/120web/",
-  "logo": "https://voccelstudio.github.io/120web/img/logo-1-20.png",
-  "description": "Estudio de arquitectura en Asunción, Paraguay. Diseño monolítico, claridad estructural y honestidad material.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Av. Mariscal López 1955, Torre 1:20, Piso 3, Barrio Villa Morra",
-    "addressLocality": "Asunción",
-    "addressCountry": "PY"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+595 21 610 123",
-    "email": "hola@120arquitectura.com",
-    "contactType": "customer service",
-    "availableLanguage": ["es"]
-  }
+  "@graph": [
+    {
+      "@type": "Architect",
+      "@id": "https://voccelstudio.github.io/120web/#estudio",
+      "name": "1:20 Arquitectura",
+      "url": "https://voccelstudio.github.io/120web/",
+      "logo": "https://voccelstudio.github.io/120web/img/logo-1-20.png",
+      "description": "Estudio de arquitectura en Asunción, Paraguay. Diseño monolítico, claridad estructural y honestidad material.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Mariscal López 1955, Torre 1:20, Piso 3, Barrio Villa Morra",
+        "addressLocality": "Asunción",
+        "addressCountry": "PY"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+595 21 610 123",
+        "email": "hola@120arquitectura.com",
+        "contactType": "customer service",
+        "availableLanguage": ["es"]
+      },
+      "areaServed": "Paraguay"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://voccelstudio.github.io/120web/#website",
+      "url": "https://voccelstudio.github.io/120web/",
+      "name": "1:20 Arquitectura",
+      "publisher": { "@id": "https://voccelstudio.github.io/120web/#estudio" }
+    }
+  ]
 }
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="index.html" class="brand">
-      <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
-      <span class="brand-name">1:20 Arquitectura</span>
+    <a href="index.html" class="brand" aria-label="1:20 Arquitectura — Inicio">
+      <svg class="brand-logo" viewBox="0 0 240 240" width="44" height="44" role="img" aria-label="1:20 Arquitectura"><rect width="240" height="240" fill="var(--logo-bg)"/><path d="M34 75 L63 44 L63 204" fill="none" stroke="var(--logo-fg)" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="6"/><line x1="98" y1="0" x2="98" y2="240" stroke="var(--logo-mid)" stroke-width="4"/><path d="M136 107 C136 95 149 88 158 92 C166 96 166 106 158 113 L134 144 L164 144" fill="none" stroke="var(--logo-mid)" stroke-width="12" stroke-linejoin="round"/><ellipse cx="194" cy="118" rx="15" ry="26" fill="none" stroke="var(--logo-mid)" stroke-width="12"/><line x1="114" y1="168" x2="228" y2="168" stroke="var(--logo-fg)" stroke-width="4"/><text x="171" y="198" text-anchor="middle" textLength="114" lengthAdjust="spacingAndGlyphs" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="var(--logo-mid)">ARQUITECTURA</text></svg>
+      <span class="brand-name">1:20 Arquitectura<small>Asunción · Paraguay</small></span>
     </a>
     <div class="header-right">
       <nav class="main-nav" aria-label="Navegación principal">
@@ -81,23 +98,49 @@
   <a href="contacto.html" class="btn btn-primary">Escribinos</a>
 </nav>
 
-<main>
-  <!-- ===================== Hero ===================== -->
+<main id="main">
+  <!-- ===================== Hero · Plano portada ===================== -->
   <section class="hero">
     <div class="hero-media">
-      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOx1YeG0-YrespOxFqXZ5noUdGpJL_nxjUR04VH2yR1svSZU1f9DwEC0NifJwnFip3XAeuejubtK9HdaZaM-Ty0aFMFv5UT6mijt7m2r4r1QKB457j0psPEai77gZxhG-J9rmFi_J3pXv8zx4kagwB8Pw_60KfI3QHXr1tPQMkYFHNNfI8XEbXj1mBLqhLgY2bKsrMbI5V0vSBsdNt1YpI9cakV-HjGb7pU4iN2OR9swlGOV3YbH0w" alt="Estructura de hormigón brutalista en blanco y negro" data-fallback>
+      <img src="img/ph/hero.svg" alt="Volumetría de una estructura de hormigón" fetchpriority="high" width="1600" height="900">
     </div>
     <div class="hero-scrim"></div>
-    <div class="hero-content">
-      <h1 class="h-display">Claridad estructural</h1>
-      <p class="body-lg">Precisión arquitectónica y diseño monolítico. Creamos espacios que resisten el tiempo y la intención, desde el corazón de Asunción.</p>
+    <div class="hero-grid-overlay drawing-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-topbar">
+        <span>A.00 · Portada</span>
+        <span class="hero-coord">1:20 — Escala de trabajo</span>
+        <span class="north-arrow" style="flex-direction:row;gap:8px">Asunción, PY
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 4 L15 13 L12 11 L9 13 Z" fill="currentColor" stroke="none"/></svg>
+        </span>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="h-display">Claridad<br>estructural</h1>
+        <p class="body-lg">Precisión arquitectónica y diseño monolítico. Creamos espacios que resisten el tiempo y la intención, desde el corazón de Asunción.</p>
+      </div>
+
+      <div class="hero-footbar">
+        <div class="hero-actions">
+          <a href="proyectos.html" class="btn btn-accent">Ver obras</a>
+          <a href="contacto.html" class="btn btn-outline">Iniciar un proyecto</a>
+        </div>
+        <div class="scale-bar" aria-hidden="true">
+          <div class="scale-bar-track"><span></span><span></span><span></span><span></span></div>
+          <div class="scale-bar-labels"><span>0</span><span>5</span><span>10 m</span></div>
+        </div>
+        <span class="redline">Precisión 1:20</span>
+      </div>
     </div>
   </section>
 
   <!-- ===================== Obras seleccionadas ===================== -->
   <section class="section container rule">
     <div class="section-head">
-      <h2 class="h-headline">Obras seleccionadas</h2>
+      <div>
+        <span class="sec-num"><b>A.01</b> Obras seleccionadas</span>
+        <h2 class="h-headline">Producción reciente</h2>
+      </div>
       <a href="proyectos.html" class="label-caps text-secondary link-arrow">Ver todos los proyectos
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -107,12 +150,13 @@
       <article class="col-8 reveal">
         <a href="proyectos/residencia-04.html" class="project-card">
           <div class="project-media aspect-16-9">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvX37JH7vnRtfWviNh37xVPstPqfscxvRPtUvtROKrQa3VfTNxuJZkHUr7kWcAQIL571LIt19Sy-f20rqP-ovj6l1xUxbHk7ZSZ0D8SoKTEIPAoi-rjgrfBQOQOoD-CWbfVbh8q3OlUmEls98tkJqWuw0nbPhRQLD_yp0abAaNGe1cbjtolx0cTEGtJRmPzh2iN_W2vLe2c12JRNQGDB-kzhlvwYj3FkEmfzyBSKHwBZDdftRXaxAZ" alt="Interior residencial con muros de hormigón expuesto" loading="lazy" data-fallback>
+            <span class="media-tag">A.01.1</span>
+            <img src="img/ph/residencia-04.svg" alt="Interior residencial con muros de hormigón expuesto" loading="lazy">
           </div>
           <div class="project-info">
             <div>
               <h3 class="h-headline-md">Residencia 04</h3>
-              <p class="text-secondary">Habitar urbano</p>
+              <p class="text-secondary">Habitar urbano · Las Mercedes</p>
             </div>
             <span class="chip">Construida</span>
           </div>
@@ -122,7 +166,8 @@
       <article class="col-4 reveal" data-delay="120">
         <a href="proyectos/pabellon-x.html" class="project-card">
           <div class="project-media aspect-3-4">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTpuGlS3mOuu8QSikeeCyt9NpWwOMHdf7gurWBeWVjQU0_PhutiqieMyo187ws-3TEWPd-EgZHDSqRo7YS5hAqhstFbvxWz_d4TxEO4HJVCExmQhdnEvnePg0H51OGbmZZag9V58yst_4c4fVUEJlz3mtoWFZtSHkQ3AosYh-OCLzRUueleTm000_nLnJ-ODgXfvonDv9giHk0locvqERdtv6dtxFw6aYR3tZDW316UY-6mv_PE1Qm" alt="Fachada con aletas de hormigón generando sombras verticales" loading="lazy" data-fallback>
+            <span class="media-tag">A.01.2</span>
+            <img src="img/ph/pabellon-x.svg" alt="Fachada con aletas de hormigón generando sombras verticales" loading="lazy">
           </div>
           <div class="project-info">
             <div>
@@ -140,8 +185,9 @@
   <section class="section container">
     <div class="grid items-center">
       <div class="col-7 reveal">
-        <h2 class="h-headline" style="margin-bottom:32px">El Estudio</h2>
-        <p class="body-lg text-secondary" style="margin-bottom:32px">
+        <span class="sec-num"><b>A.02</b> El Estudio</span>
+        <h2 class="h-headline" style="margin-bottom:28px">Reducir hasta lo esencial</h2>
+        <p class="body-lg text-secondary" style="margin-bottom:28px">
           1:20 Arquitectura es una práctica que parte de la convicción de que el espacio moldea la experiencia humana.
           Nos formamos en Asunción y proyectamos para toda la región. Abordamos cada proyecto como un desafío estructural
           único, buscando claridad mediante la reducción rigurosa y la honestidad de los materiales.
@@ -149,8 +195,109 @@
         <a href="estudio.html" class="btn btn-outline">Descubrí nuestro proceso</a>
       </div>
       <div class="col-5 col-start-8 reveal" data-delay="120">
-        <div class="project-media aspect-square">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiSZo1Abtw-Po_9YKBpblDuSnt-22yRDrp2BnCJE5LM1VZbEIFw7lqcXkyTzpCT-Kzr5Okj82D43aMJElEMYMIqMFAdR5DO8F_H0r0NzDv2-D7wNk1On6c85pzVYiMO_PzgBRtlMWxnegye21M0yhICiKwF76ZZXj-4t7rCT5j6TAsjdjdmCwlqkZUPfk-06PuUQ0a047fyrczwympapDxfLzPTPz5AWGOuGVnn6iXChLPk8x4FZKg" alt="Maqueta arquitectónica de hormigón crudo en estudio" loading="lazy" data-fallback>
+        <div class="project-media aspect-square sheet">
+          <img src="img/ph/estudio.svg" alt="Maqueta arquitectónica de hormigón crudo en estudio" loading="lazy">
+        </div>
+        <div class="dim" style="margin-top:16px"><span class="dim-label">Maqueta <b>1:20</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Servicios ===================== -->
+  <section class="section container rule">
+    <div class="section-head">
+      <div>
+        <span class="sec-num"><b>A.03</b> Servicios</span>
+        <h2 class="h-headline">Qué hacemos</h2>
+      </div>
+      <p class="text-secondary" style="max-width:360px">Del anteproyecto a la entrega de obra, con una sola interlocución y control técnico en cada etapa.</p>
+    </div>
+
+    <div class="services">
+      <div class="service-row reveal">
+        <span class="service-idx">01</span>
+        <h3 class="service-title">Proyecto de arquitectura</h3>
+        <p class="service-desc">Diseño integral: anteproyecto, proyecto ejecutivo y documentación. Cada decisión estructural resuelta antes de que llegue el primer ladrillo.</p>
+      </div>
+      <div class="service-row reveal" data-delay="80">
+        <span class="service-idx">02</span>
+        <h3 class="service-title">Dirección de obra</h3>
+        <p class="service-desc">Seguimiento técnico, control de calidad y gestión de contratistas. Presupuesto y plazos vigilados de cerca, sobre el plano y sobre el terreno.</p>
+      </div>
+      <div class="service-row reveal" data-delay="160">
+        <span class="service-idx">03</span>
+        <h3 class="service-title">Espacio público y urbanismo</h3>
+        <p class="service-desc">Intervenciones urbanas, plazas, equipamientos y ordenamiento. Proyectos que negocian con la ciudad y la devuelven habitable.</p>
+      </div>
+      <div class="service-row reveal" data-delay="240">
+        <span class="service-idx">04</span>
+        <h3 class="service-title">Interiorismo y mobiliario</h3>
+        <p class="service-desc">Interiores a medida y mobiliario de autor. La misma lógica material llevada hasta la escala del objeto y del encuentro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Cifras / credibilidad ===================== -->
+  <section class="section container">
+    <div class="stats reveal">
+      <div class="stat">
+        <div class="stat-num">12<sup>+</sup></div>
+        <div class="stat-label">Años de práctica</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">68</div>
+        <div class="stat-label">Obras construidas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">09</div>
+        <div class="stat-label">Reconocimientos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">04</div>
+        <div class="stat-label">Países</div>
+      </div>
+    </div>
+
+    <div class="dim"><span class="dim-label">Clientes y colaboradores</span></div>
+
+    <div class="logo-strip reveal" aria-label="Clientes">
+      <span>Grupo Ñu</span>
+      <span>Parque Sur</span>
+      <span>Fundación Río</span>
+      <span>Cemsа</span>
+      <span>Municipalidad</span>
+      <span>Hotel Ñembutú</span>
+    </div>
+  </section>
+
+  <!-- ===================== Llamado a la acción ===================== -->
+  <section class="section container">
+    <div class="sheet drawing-grid" style="padding:clamp(40px,6vw,88px)">
+      <div class="grid items-center">
+        <div class="col-7">
+          <span class="sec-num"><b>A.04</b> Contacto</span>
+          <h2 class="h-headline" style="margin-bottom:24px">¿Tenés un terreno<br>en mente?</h2>
+          <p class="body-lg text-secondary" style="margin-bottom:32px">Contanos la escala de tu idea. Agendás una consulta de 30 minutos y salís con un primer diagnóstico.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap">
+            <a href="contacto.html" class="btn btn-accent">Agendar consulta</a>
+            <a href="proyectos.html" class="btn btn-outline">Ver portafolio</a>
+          </div>
+        </div>
+        <div class="col-4 col-start-9">
+          <div class="title-block" style="grid-template-columns:1fr">
+            <div class="tb-cell" style="border-right:none">
+              <span class="tb-label">Estudio</span>
+              <span class="tb-value">1:20 Arquitectura</span>
+            </div>
+            <div class="tb-cell" style="border-right:none">
+              <span class="tb-label">Dirección</span>
+              <span class="tb-value" style="font-size:13px">Av. Mariscal López 1955 · Villa Morra</span>
+            </div>
+            <div class="tb-cell" style="border-right:none;border-bottom:none">
+              <span class="tb-label">Contacto</span>
+              <span class="tb-value" style="font-size:13px">hola@120arquitectura.com</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -160,14 +307,24 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="brand">
-        <img class="brand-logo" src="img/logo-1-20.png" alt="Logo 1:20 Arquitectura">
-        <span class="brand-name">1:20 Arquitectura</span>
+      <a href="index.html" class="brand" aria-label="1:20 Arquitectura — Inicio">
+        <svg class="brand-logo" viewBox="0 0 240 240" width="44" height="44" role="img" aria-label="1:20 Arquitectura"><rect width="240" height="240" fill="var(--logo-bg)"/><path d="M34 75 L63 44 L63 204" fill="none" stroke="var(--logo-fg)" stroke-width="17" stroke-linejoin="miter" stroke-miterlimit="6"/><line x1="98" y1="0" x2="98" y2="240" stroke="var(--logo-mid)" stroke-width="4"/><path d="M136 107 C136 95 149 88 158 92 C166 96 166 106 158 113 L134 144 L164 144" fill="none" stroke="var(--logo-mid)" stroke-width="12" stroke-linejoin="round"/><ellipse cx="194" cy="118" rx="15" ry="26" fill="none" stroke="var(--logo-mid)" stroke-width="12"/><line x1="114" y1="168" x2="228" y2="168" stroke="var(--logo-fg)" stroke-width="4"/><text x="171" y="198" text-anchor="middle" textLength="114" lengthAdjust="spacingAndGlyphs" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="var(--logo-mid)">ARQUITECTURA</text></svg>
+        <span class="brand-name">1:20 Arquitectura<small>Asunción · Paraguay</small></span>
       </a>
-      <p class="caption">© <span data-year>2025</span> 1:20 Arquitectura. Asunción · Paraguay.</p>
+      <p class="caption">Estudio de arquitectura. Diseño monolítico, claridad estructural y honestidad material.</p>
     </div>
     <div class="footer-col">
-      <h4 class="label-caps">Social</h4>
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="index.html" class="caption">Inicio</a></li>
+        <li><a href="proyectos.html" class="caption">Proyectos</a></li>
+        <li><a href="estudio.html" class="caption">El Estudio</a></li>
+        <li><a href="bitacora.html" class="caption">Bitácora</a></li>
+        <li><a href="contacto.html" class="caption">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Social</h4>
       <ul>
         <li><a href="#" class="caption">Instagram</a></li>
         <li><a href="#" class="caption">LinkedIn</a></li>
@@ -175,13 +332,17 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4 class="label-caps">Información</h4>
+      <h4>Contacto</h4>
       <ul>
-        <li><a href="bitacora.html" class="caption">Bitácora</a></li>
-        <li><a href="#" class="caption">Privacidad</a></li>
+        <li><a href="contacto.html" class="caption">hola@120arquitectura.com</a></li>
+        <li><a href="contacto.html" class="caption">+595 21 610 123</a></li>
         <li><a href="contacto.html" class="caption">Trabajá con nosotros</a></li>
       </ul>
     </div>
+  </div>
+  <div class="container footer-base">
+    <span>© <span data-year>2025</span> 1:20 Arquitectura</span>
+    <span>Asunción · Paraguay · Esc. 1:20</span>
   </div>
 </footer>
 

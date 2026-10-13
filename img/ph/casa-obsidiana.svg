@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img" aria-label="Casa Obsidiana">
+<rect width="1600" height="1200" fill="#141414"/>
+<defs><pattern id="g7" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0H0V46" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/></pattern><pattern id="G7" width="230" height="230" patternUnits="userSpaceOnUse"><path d="M230 0H0V230" fill="none" stroke="rgba(255,255,255,0.075)" stroke-width="1"/></pattern></defs>
+<rect width="1600" height="1200" fill="url(#g7)"/>
+<rect width="1600" height="1200" fill="url(#G7)"/>
+<rect x="36" y="36" width="1528" height="1128" fill="none" stroke="#3a3d3e" stroke-width="1"/>
+<path d="M36 78 L36 36 L78 36" fill="none" stroke="#d9503a" stroke-width="2"/>
+<path d="M1564 78 L1564 36 L1522 36" fill="none" stroke="#d9503a" stroke-width="2"/>
+<path d="M36 1122 L36 1164 L78 1164" fill="none" stroke="#d9503a" stroke-width="2"/>
+<path d="M1564 1122 L1564 1164 L1522 1164" fill="none" stroke="#d9503a" stroke-width="2"/>
+<line x1="36" y1="960.0" x2="1564" y2="960.0" stroke="#3a3d3e" stroke-width="1.5"/>
+<rect x="231.7" y="558.8" width="214.9" height="401.2" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<rect x="496.3" y="351.1" width="146.5" height="608.9" fill="#232323" stroke="#333333" stroke-width="1"/>
+<rect x="725.0" y="467.3" width="150.0" height="492.7" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<rect x="924.4" y="646.6" width="212.0" height="313.4" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<rect x="1186.1" y="547.5" width="149.4" height="412.5" fill="#1d1d1d" stroke="#333333" stroke-width="1"/>
+<line x1="224" y1="1056" x2="1376" y2="1056" stroke="#3a3d3e" stroke-width="1"/>
+<line x1="224" y1="1050" x2="224" y2="1062" stroke="#8e9192" stroke-width="1"/>
+<line x1="1376" y1="1050" x2="1376" y2="1062" stroke="#8e9192" stroke-width="1"/>
+<g>
+<rect x="50" y="1138" width="184" height="8" fill="none" stroke="#8e9192" stroke-width="1"/>
+<rect x="50" y="1138" width="46" height="8" fill="#8e9192"/>
+<rect x="142" y="1138" width="46" height="8" fill="#8e9192"/>
+<text x="50" y="1132" fill="#8e9192" font-family="monospace" font-size="11" letter-spacing="1">0</text>
+<text x="234" y="1132" fill="#8e9192" font-family="monospace" font-size="11" letter-spacing="1" text-anchor="end">1:20</text>
+</g>
+<g>
+<circle cx="1544" cy="1144" r="34" fill="none" stroke="#8e9192" stroke-width="1"/>
+<path d="M1544 1110 L1561 1157 L1544 1147 L1527 1157 Z" fill="#d9503a"/>
+</g>
+<g>
+<line x1="540" y1="1010" x2="1060" y2="1010" stroke="#3a3d3e" stroke-width="1"/>
+<text x="800" y="1044" fill="#8e9192" font-family="monospace" font-size="13" letter-spacing="3" text-anchor="middle">CASA OBSIDIANA</text>
+<text x="800" y="1066" fill="#d9503a" font-family="monospace" font-size="10" letter-spacing="4" text-anchor="middle">IMAGEN PENDIENTE</text>
+</g>
+</svg>
