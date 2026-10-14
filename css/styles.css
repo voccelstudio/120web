@@ -1352,6 +1352,10 @@ html[data-theme="light"] .site-header { background: color-mix(in srgb, var(--bg)
 
 /* Texto sobre imágenes: siempre claro */
 .hero-content .h-display { color: #ffffff; }
+/* Botón outline sobre el hero: el scrim es siempre oscuro, así que el texto
+   debe quedar claro en ambos temas (si no, en modo claro queda negro sobre negro) */
+.hero .btn-outline { color: #ffffff; border-color: rgba(255, 255, 255, 0.55); }
+.hero .btn-outline:hover { background: #ffffff; color: #131313; border-color: #ffffff; }
 .work-overlay .h-display,
 .work-overlay .h-headline,
 .work-overlay .h-headline-md { color: #ffffff; }
